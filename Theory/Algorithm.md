@@ -19,10 +19,10 @@
             nums = self.nums
             left, right = 2 * i + 1, 2 * i + 2  ## 左右子节点的下标
             large_index = i
-            if left < n and nums[i] < nums[left]:
+            if left <= n and nums[i] < nums[left]:
                 large_index = left
 
-            if right < n and nums[large_index] < nums[right]:
+            if right <= n and nums[large_index] < nums[right]:
                 large_index = right
 
             # 通过上面跟左右节点比较后，得出三个元素之间较大的下标，如果较大下表不是父节点的下标，说明交换后需要重新调整大顶堆
@@ -31,6 +31,6 @@
                 self.build_heap(large_index, n)
 
 # test
-nums = [12,11,15,13,4,5,6,7,20]
-solution = Solution()
-print(solution.heap_sort(nums))
+    nums = [12,11,15,13,4,5,6,7,20]
+    solution = Solution()
+    print(solution.heap_sort(nums))
